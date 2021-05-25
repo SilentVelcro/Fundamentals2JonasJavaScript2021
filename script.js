@@ -62,7 +62,7 @@ const calcAge2 = function(birthYear) { // a function without a name is a annoyno
 const age2 = calcAge2(1980);
 
 console.log(age1, age2);
-*/
+
 ///////////////////////////////////////////////////////// ARROW FUNCTION 35
 // Arrow functions do not get a so-called this keyword.
 
@@ -82,3 +82,17 @@ console.log (yearsUntilRetirement(1980, 'Susan'));
 
 ///////////////////////////////////////////////////////// FUNCTIONS CALLING OTHER FUNCTIONS 36
 
+function cutFruitPieces (fruit) {
+    return fruit * 4;
+};
+
+function fruitProcessor(apples, oranges) {
+const applePieces = cutFruitPieces(apples);
+const orangePieces = cutFruitPieces(oranges);
+const juice = `Jucie with ${applePieces} apples and ${orangePieces} oranges.`;
+return juice;
+}
+
+console.log(fruitProcessor(2, 3));
+*/
+///////////////////////////////////////////////////////// REVIEWING FUCTIONS 37
