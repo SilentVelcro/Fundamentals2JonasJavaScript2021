@@ -247,7 +247,6 @@ console.log(friends.includes(23));
 if (friends.includes('John')) {
     console.log('You have a friend called John');
 }
-*/
 
 ///////////////////////////////////////////////////////// INDRODUCTION TO OBJECTS 42
 const jonas = {
@@ -261,3 +260,38 @@ const jonas = {
 // ^^^^^ the order of valuses/properties is not important. Objects are for more unstructured data. Arrays are for structure.
 
 ///////////////////////////////////////////////////////// Dot vs. Bracket Notation
+const nikki = {
+    firstName: 'Nikki',
+    lastName: 'Grostefon',
+    age: 2037-1980,
+    job: 'Programmer',
+    friends: ['Bryan', 'John', 'Levi', 'Josh']
+};
+console.log(nikki);
+
+// ------DOT NOTATION
+console.log(nikki.lastName); //-- returns "Grostefon"
+console.log(nikki['lastName']); //-- Also returns "Grostefon"
+
+//-----BRACKET NOTATION
+const nameKey = 'Name';
+console.log(nikki['first' + nameKey]) //-- Return's "Nikki" - MUST USE CRULIES
+console.log(nikki['last' + nameKey]) //-- Return's "Grostefon" - MUST USE CRULIES
+
+//-------
+
+const interestedIn = prompt ('What do you want to know about Nikki? Choose between firstName, lastName, age, job, and friends.');
+
+if (nikki[interestedIn]) {
+    console.log(nikki[interestedIn]);
+} else {
+    console.log('Wrong Anser! Please choose beteween firstName, lastName, age, job, and friends.');
+}
+
+nikki.location = 'United States of America';
+nikki['twitter'] = '@thenikkinichole';
+console.log(nikki);
+
+console.log(`${nikki.firstName} has ${nikki.friends.length} friends, and her grumpiest friend is ${nikki.friends[2]}.`);
+*/
+///////////////////////////////////////////////////////// OBJECT METHODS 44
