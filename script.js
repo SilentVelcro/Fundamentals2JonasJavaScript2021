@@ -1,4 +1,4 @@
-'use strick';
+'use strict';
 ///////////////////////////////////////////////////////// ACTIVATE STRICT MODE 32
 /*
 // Strick mode - is a speacial mode to write secure JavaScript.
@@ -115,5 +115,149 @@ if (retirement > 0) {
 }
 console.log(yearsUntilRetirement(1980, 'Nikki'));
 console.log(yearsUntilRetirement(1950, 'Mike'));
+
+///////////////////////////////////////////////////////// INTRODUCTION TO ARRAYS 39
+
+//--------------------------------------**NOTES FROM JOHN**----------------------------
+
+// All arrays are members of Array class. The Array class provides a lot of built in methods. A few of the most useful methods are: 
+
+    // - map: 
+            const sampleArray = [1, 2, 3, 4, 5];
+            const sampleArrayTwo = [222, 545, 978];
+
+            const addTwo = sampleArray.map((number) => {
+                return number + 2;
+            });
+
+            const addTwoFuntion = (numberArray) => {
+                return numberArray.map((number, numberIndex) => {
+                    return number + 2;
+                })
+            }
+
+            const chainedMap = addTwoFuntion(sampleArray).map((element, index, oArray) => {
+                return {
+                    element, index, oArray
+                }
+            });
+
+
+            const addTwoAgain = addTwoFuntion(sampleArray);
+            const addTwoAgainAgain = addTwoFuntion(sampleArrayTwo);
+
+        console.log({addTwoAgain});
+        console.log({addTwoAgainAgain});
+        console.log({chainedMap})
+
+    // - Filter
+    // - Sort*
+    // - Reduce
+    
+    /////////////////////////////////////////////////////////
+
+    const friend1 = 'Nikki';
+    const friend2 = 'John';
+    const friend3 = 'Bryan';
+
+    const friends = ['Nikki', 'John', 'Bryan']
+    console.log(friends);
+
+    const yearsArray = new Array(1991, 1984, 2008, 2020);
+
+    console.log(friends[0]);
+    console.log(friends[2]);
+                    //--^^ In these brackets [] - Can be used to add elements to an Array.
+    console.log(friends.length);
+    console.log(friends[friends.length - 1]); //-- retrieves the last element in the Array. 
+                        //--^^ In these brackets [] you can put any expression; A expression is something that produces a value!!!!
+
+
+//----Changing elements to an Array
+friends[2] = 'Josh';
+console.log(friends);
+
+// Arrays can be mutated becuase they are not a primitive value (I.E. const). You cannot change the whole Array. 
+
+// Arrays can hold values of different types all at the same time.
+const firstName = 'Nikki';
+const nikki = [firstName, 'Grostefon', 2037-1980,'Programmer', friends];
+console.log(nikki);
+console.log(nikki.length);
+
+// Exercise - complete a operation outside of Array
+const calcAge = function (birthYear) {
+    return 2037 - birthYear;
+}
+const years = [1990, 1967, 2002, 2010, 2018];
+
+// Arrays covert numbers to strings, so you can do operations with them by themselves.
+// ^ console.log(years + 10)
+
+
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+const age3 = calcAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+
+// Arrays can hold funtion calls
+const ages = [calcAge(years[0]), calcAge(years[1]),calcAge(years[years.length - 1])];
+console.log(ages);
+
+///////////////////////////////////////////////////////// Basic Array Operations (Methods) 40
+
+// - PUSH METHOD: adds elemets to the end of the an Array
+// const friends = ['Nikki', 'John', 'Bryan'];
+// friends.push('Jay'); // - Jay is the argument
+// console.log(friends);
+
+// - ALTERNATE WAY & displays length - ^^^^^
+const friends = ['Nikki', 'John', 'Bryan'];
+const newLength = friends.push('Levi');  //<-----displays length
+console.log(friends);
+console.log(newLength);                 //<-----displays length
+
+// - UNSHIFT METHOD: adds elements to the beginning of an Array.
+friends.unshift('Josh');
+console.log(friends);
+
+// POP METHOD: removes elements from Arrays.
+friends.pop();
+console.log(friends);
+
+const popped = friends.pop(); //----- shows removed name
+console.log(popped);
+console.log(friends);
+
+// SHIFT METHOD: removed the first element of an Array.
+friends.shift();
+console.log(friends);
+
+// INDEXOF: tells us what position the element is in the Array.
+console.log(friends.indexOf('John'));
+console.log(friends.indexOf('Ben')); // <--- not in array will return -1.
+
+// INCLUDESl: will return a boolean answer if the element is in the Array or Not in the Array.
+friends.push(23);
+console.log(friends.includes('John'));
+console.log(friends.includes('Ben'));
+console.log(friends.includes(23));
+
+// We can you the INCLUDES method to write conditionals.
+if (friends.includes('John')) {
+    console.log('You have a friend called John');
+}
 */
-/////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////// INDRODUCTION TO OBJECTS 42
+const jonas = {
+    firstName: 'Nikki',
+    lastName: 'Grostefon',
+    age: 2037-1980,
+    job: 'Programmer',
+    friends: ['Bryan', 'John', 'Levi']
+};
+
+// ^^^^^ the order of valuses/properties is not important. Objects are for more unstructured data. Arrays are for structure.
+
+///////////////////////////////////////////////////////// Dot vs. Bracket Notation
