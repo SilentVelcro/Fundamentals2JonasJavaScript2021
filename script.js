@@ -13,9 +13,8 @@ if (passedTest) hasDriversLicense = true;
 if (hasDriversLicense) console.log('I can drive.')
 
 ///////////////////////////////////////////////////////// FUNCTIONS 33
-// Fucntions are pieces of code at you can use over and over.
-
-function logger() {
+ Fucntions are pieces of code at you can use over and over.
+unction logge {
     console.log('My name is Nikki.');
 }
 
@@ -205,6 +204,7 @@ const ages = [calcAge(years[0]), calcAge(years[1]),calcAge(years[years.length - 
 console.log(ages);
 
 ///////////////////////////////////////////////////////// Basic Array Operations (Methods) 40
+// ARRAY'S ARE OBJECTS
 
 // - PUSH METHOD: adds elemets to the end of the an Array
 // const friends = ['Nikki', 'John', 'Bryan'];
@@ -295,3 +295,49 @@ console.log(nikki);
 console.log(`${nikki.firstName} has ${nikki.friends.length} friends, and her grumpiest friend is ${nikki.friends[2]}.`);
 */
 ///////////////////////////////////////////////////////// OBJECT METHODS 44
+
+        //---object
+const nikki = {
+    firstName: 'Nikki',
+    lastName: 'Grostefon',
+    birthYear: 1980,
+    job: 'Programmer',
+    friends: ['Bryan', 'John', 'Levi', 'Josh'],
+    hasDriversLicense: false,
+
+//**********************BELOW - any EXPRESSION within a OBJECT is a METHOD*********
+
+// KEY: "calcAge" is now property that holds a function value of the nikki object defined by the ":"
+    // calcAge: function(birthYear) {           // <----- ONE WAY 
+    //     return 2037 - birthYear;
+    // }
+
+    // calcAge: function() {            //<----- ANOTHER WAY ---- ****USING THIS****
+    //     console.log(this); // <--- Calling "this" inside the object will present all properties for that object.
+    //     return 2037 - this.birthYear;
+    // }
+
+    //----- ANOTHER WAY ---- ****USING THIS****
+    calcAge: function() {             
+        this.age = 2037 - this.birthYear;
+        return this.age;
+    }, // <---- using multiple methods you will need this comma!!!
+
+    getSummary: function() {
+        return `${this.firstName} is a ${this.calcAge()}-year old ${nikki.job}, and she ${this.hasDriversLicense ? 'a' : 'no'} driver's license.`
+    }                    //^^^^^^^^^^^^ using the turnery operator we can assign values for the string.
+};
+
+// console.log(nikki.calcAge(1980)); // ---- CALL FUNCTION 
+
+// console.log(nikki['calcAge'](1980)); //---- ANOTHER WAY TO CALL A FUNCTION; SAME RESULT
+
+console.log(nikki.calcAge()); //---- ANOTHER CALL ---- ****USING THIS****
+
+console.log(nikki.age);       //---- ANOTHER CALL ---- ****USING THIS****
+console.log(nikki.age);
+console.log(nikki.age);
+
+console.log(nikki.getSummary());
+
+///////////////////////////////////////////////////////// ITERATION: THE FOR LOOP 46
