@@ -293,7 +293,7 @@ nikki['twitter'] = '@thenikkinichole';
 console.log(nikki);
 
 console.log(`${nikki.firstName} has ${nikki.friends.length} friends, and her grumpiest friend is ${nikki.friends[2]}.`);
-*/
+
 ///////////////////////////////////////////////////////// OBJECT METHODS 44
 
         //---object
@@ -339,5 +339,24 @@ console.log(nikki.age);
 console.log(nikki.age);
 
 console.log(nikki.getSummary());
-
+*/
 ///////////////////////////////////////////////////////// ITERATION: THE FOR LOOP 46
+
+console.log('Lifting weights repetition 1');
+console.log('Lifting weights repetition 2');
+console.log('Lifting weights repetition 3');
+console.log('Lifting weights repetition 4');
+console.log('Lifting weights repetition 5');
+console.log('Lifting weights repetition 6');
+console.log('Lifting weights repetition 7');
+console.log('Lifting weights repetition 8');
+console.log('Lifting weights repetition 9');
+console.log('Lifting weights repetition 10');
+
+// for loop keeps running while condition is TRUE
+// **rep = rep + 1** can be presented as **REP++**
+for(let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+};
+
+///////////////////////////////////////////////////////// LOOPING  ARRAYS, BREAKING AND CONTINUING 47
