@@ -525,6 +525,29 @@ for(let exercise = 1; exercise < 4; exercise++) {
             console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
         }
 }
-*/
-/////////////////////////////////////////////////////////
 
+///////////////////////////////////////////////////////// THE WHILE LOOP 49
+//--------------/condition/counter
+// for(let rep = 1; rep <= 10; rep++) {
+//     console.log(`Lifting weights repetition ${rep}`);
+// }
+
+let rep = 1;
+while (rep <= 10) {
+    console.log(`WHILE: Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+//------ RANDOM NUMBER
+let dice = Math.trunc(Math.random() * 6) + 1;
+console.log(dice);
+
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}!`)
+    dice = Math.trunc(Math.random() * 6) + 1;
+
+    if (dice === 6) console.log(`You got a 6. Loop has eneded ---- GAME OVER!`);
+}
+*/
+
+/////////////////////////////////////////////////////////
