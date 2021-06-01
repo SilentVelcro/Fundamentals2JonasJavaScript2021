@@ -339,7 +339,7 @@ console.log(nikki.age);
 console.log(nikki.age);
 
 console.log(nikki.getSummary());
-*/
+
 ///////////////////////////////////////////////////////// ITERATION: THE FOR LOOP 46
 
 console.log('Lifting weights repetition 1');
@@ -360,3 +360,155 @@ for(let rep = 1; rep <= 10; rep++) {
 };
 
 ///////////////////////////////////////////////////////// LOOPING  ARRAYS, BREAKING AND CONTINUING 47
+
+const nikkiArray = [
+    'Nikki',
+    'Grostefon',
+    2037-1980,
+    'Programmer',
+    ['Bryan', 'John', 'Levi'],
+    true
+];
+
+const types = [];
+
+// console.log(nikkiArray[0])           //--- ONE WAY - manually    
+// console.log(nikkiArray[1])
+// ...
+// console.log(nikkiArray[4])
+
+
+// for (let i = 0; i < 5; i++){          //--- ANOTHER WAY --- by placing **5** the system will present
+//     console.log(nikkiArray[i])        // all 5 items one by one.   
+// }
+
+            //--- **0** - is the beginning of the index (first element in array)
+for (let i = 0; i < nikkiArray.length; i++){         //--- ANOTHER WAY using the method **length**
+    // Reading from nikkiArray
+    console.log(nikkiArray[i], typeof nikkiArray[i]);
+    // //Filling types array
+    types[i] = typeof nikkiArray[i];  //<--- one way of filling array
+}
+
+for (let i = 0; i < nikkiArray.length; i++){
+    console.log(nikkiArray[i], typeof nikkiArray[i]);
+    types.push(typeof nikkiArray[i]);  //<--- another way of filling array
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2037 - years[i]);
+}
+console.log(ages);
+
+///////////////////////////////////////////////////////// CONTINUE AND BREAK (17:00 min of lesson 47)
+
+///// CONTINUE
+console.log('-----ONLY STRINGS-----')
+for (let i = 0; i < nikkiArray.length; i++){
+    if (typeof nikkiArray[i] !== 'string') continue;
+
+    console.log(nikkiArray[i], typeof nikkiArray[i]);
+}
+
+// ///// BREAK
+console.log('-----BREAK WITH NUMBER-----')
+
+for (let i = 0; i < nikkiArray.length; i++){
+    if (typeof nikkiArray[i] !== "string") break;
+
+    console.log(nikkiArray[i], typeof nikkiArray[i]);
+}
+
+
+//////////////////////////////// SPREAD OPERATOR - JOHN HILL
+
+
+const people = [
+    {
+        firstName: 'John',
+        lastName: 'Hill',
+        age: 38,
+        job: "Developer",
+        hasDriversLicense: true,
+    },
+
+    {
+        firstName: 'Nikki',
+        lastName: 'Grostefon',
+        age: 41,
+        job: "Developer",
+        hasDriversLicense: false,
+    },
+
+    {
+        firstName: 'Bryan',
+        lastName: 'Puckey',
+        age: 101,
+        job: "Soldier",
+        hasDriversLicense: true,
+    },
+]
+console.log(people);
+
+// ---- MAP looks at every element in the array and executes a function that creates a new array.
+
+const names = people.map((person)=>{
+    return {
+        firstName: person.firstName,
+        lastName: person.lastName,
+    }
+});
+console.log(names);
+
+
+///////////////////////////////////////////////////////// DESTRUCTURING AND SPREADING NAMES - JOHN HILL
+// ---- ANOTHER MAP STATEMENT
+
+const destructuredNames = people.map((person)=>{
+    const {firstName, lastName} = person
+    return {
+        firstName,
+        lastName
+    }
+});
+console.log(destructuredNames);
+
+const spreadNames = people.map((person)=>{
+    const {firstName, lastName, ...details} = person //<--- REST OPERATOR
+    return{
+        firstName,
+        lastName,
+        details: {
+            nickName: `${firstName} ${lastName}`,
+            ...details //<--- SPREAD OPERATOR
+        }
+    }
+});
+console.log(spreadNames);
+
+//--- USING REST WITH A ARRAY
+const [person1, ...otherPeople] = people
+console.log(otherPeople);
+
+//--- USING SPREAD WITH A ARRAY
+const combinedArray = [...people, ...spreadNames]
+console.log(combinedArray);
+*/
+///////////////////////////////////////////////////////// LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+const nikkiArray = [
+    'Nikki',
+    'Grostefon',
+    2037-1980,
+    'Programmer',
+    ['Bryan', 'John', 'Levi'],
+    true
+];
+
+// 0, 1....4
+// 4, 3....1
+
