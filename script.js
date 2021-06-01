@@ -497,8 +497,8 @@ console.log(otherPeople);
 //--- USING SPREAD WITH A ARRAY
 const combinedArray = [...people, ...spreadNames]
 console.log(combinedArray);
-*/
-///////////////////////////////////////////////////////// LOOPING BACKWARDS AND LOOPS IN LOOPS
+
+///////////////////////////////////////////////////////// LOOPING BACKWARDS AND LOOPS IN LOOPS 49
 
 const nikkiArray = [
     'Nikki',
@@ -506,9 +506,25 @@ const nikkiArray = [
     2037-1980,
     'Programmer',
     ['Bryan', 'John', 'Levi'],
-    true
 ];
 
+/////////////////////////// BACKWARDS
 // 0, 1....4
-// 4, 3....1
+// 4, 3....0
+
+for(let i = nikkiArray.length - 1; i >= 0; i--) {
+    console.log(i, nikkiArray[i])
+}
+
+/////////////////////////// LOOP-INSIDE-LOOP
+
+for(let exercise = 1; exercise < 4; exercise++) {
+    console.log(`------ Starting exersice ${exercise}`);
+
+        for (let rep = 1; rep < 6; rep++) {
+            console.log(`Exercise ${exercise}: Lifting weight repetition ${rep}`);
+        }
+}
+*/
+/////////////////////////////////////////////////////////
 
